@@ -1,0 +1,148 @@
+[data-theme="dark"] {
+  --primary-color: #9a97f3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #000;
+  --heading-color: #818cab;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+/* slider */
+
+.svgsun_game {
+  font-size: 40px;
+}
+
+.svgmoon_game {
+  position: relative;
+  left: 70px;
+  font-size: 40px;
+}
+
+.theme-switch-wrapper {
+  position: relative;
+  bottom: 40px;
+  left: 40px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: grey;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* end */
+.start_game {
+  position: relative;
+  bottom: 100px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 25px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.play_game {
+  position: relative;
+  bottom: 200px;
+  width: 600px;
+  cursor: url("../img/hammer.png"), auto;
+  margin: 0 auto;
+}
+
+.play_game:active {
+  cursor: url("../img/hammer1.png"), auto;
+}
+
+.soil_game {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  float: left;
+}
+
+.soil_game::after {
+  content: "";
+  width: 200px;
+  height: 100px;
+  display: block;
+  background: url(../img/soil.png) bottom center no-repeat;
+  background-size: 80%;
+  position: absolute;
+  bottom: -25px;
+}
+
+.rat_game {
+  width: 100%;
+  height: 100%;
+  background: url(../img/rat.png) bottom center no-repeat;
+  background-size: 80%;
+  position: absolute;
+  transition: top 0.3s;
+  top: 150px;
+}
+
+.soil_game.start .rat_game {
+  top: 0;
+}
